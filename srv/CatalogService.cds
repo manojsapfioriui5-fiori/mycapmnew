@@ -60,4 +60,5 @@ service CatalogService @(path: 'CatalogService', requires: 'authenticated-user')
 
     //non instance bound function
     function getMostExpensiveOrder() returns POs;
+    function getDummy(email: String(40)) returns String;
 }

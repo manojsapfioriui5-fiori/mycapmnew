@@ -19,6 +19,9 @@ module.exports = cds.service.impl(async function () {
             "nameFirst": "Akhil"
         })
     });
+    this.on('getDummy',async (req,res) => {
+        return "Hello";
+    });
     //Actions and Functions
     this.on('getMostExpensiveOrder', async (req, res) => {
         try {

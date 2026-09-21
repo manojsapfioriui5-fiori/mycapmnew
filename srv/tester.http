@@ -42,6 +42,9 @@ Content-Type: application/json
 ###Calling non instance bound function
 http://localhost:4004/odata/v4/CatalogService/getMostExpensiveOrder()
 
+###Calling non instance bound function
+http://localhost:4004/odata/v4/CatalogService/getDummy(email='anjajnkja')
+Authorization: Basic manoj:
 ###Boost specific PO
 POST http://localhost:4004/odata/v4/CatalogService/POs('02BD2137-0890-1EEA-A6C2-BB55C1978999')/boost
 Authorization: Basic arti:
