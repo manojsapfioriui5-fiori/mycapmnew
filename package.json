@@ -1,0 +1,69 @@
+{
+  "name": "mycapm",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "dependencies": {
+    "@cap-js/hana": "^3",
+    "@sap/cds": "^10",
+    "@sap/xssec": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3",
+    "@sap/cds-dk": "^10",
+    "cds-plugin-ui5": "^0.17.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-managepo": "cds watch --open cutomer.po.managepo/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "private": true,
+  "cds": {
+    "requires": {
+      "auth": {
+        "[production]": {
+          "strategy": "JWT"
+        },
+        "[development]": {
+          "strategy": "mocked",
+          "users": {
+            "manoj": {
+              "roles": [
+                "Viewer",
+                "Editor"
+              ],
+              "userAttributes": {
+                "BankName": [
+                  "My Bank of London"
+                ],
+                "Country": [
+                  "GB"
+                ]
+              }
+            },
+            "arti": {
+              "roles": [
+                "Editor"
+              ],
+              "userAttributes": {
+                "BankName": [
+                  "My Bank of London"
+                ],
+                "Country": [
+                  "JP",
+                  "US"
+                ]
+              }
+            }
+          }
+        },
+        "kind": "mocked"
+      }
+    }
+  },
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/managepo"
+  ]
+}
