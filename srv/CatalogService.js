@@ -37,7 +37,7 @@ module.exports = cds.service.impl(async function () {
     this.on("boost", async (req, res) => {
         try {
             //programatically check @runtime if user have required permissions
-            req.user.is('Editor') || req.reject(403)
+            req.user.is('Edit') || req.reject(403)
             const POID = req.params[0]; // Assuming the ID is passed as a parameter in the request
             await cds.tx(req).run(
                 UPDATE(POs).with({ GROSS_AMOUNT: { '+=': 20000 } }).where(POID)
