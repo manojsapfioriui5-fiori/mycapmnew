@@ -252,4 +252,4 @@ annotate service.ProductSet with @(
     ]
 );
 
-annotate service.POs with @odata.draft.enabled ;
+// annotate service.POs with @odata.draft.enabled ;
